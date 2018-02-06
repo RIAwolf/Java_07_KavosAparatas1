@@ -1,5 +1,9 @@
 package com.company;
 
+import aparatai.KavosAparatas;
+import servisai.KavosServisas;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +18,14 @@ public class Main {
     public static final int ACTION_8 = 8;
     public static final int ACTION_9 = 9;
     public static final int ACTION_10 = 10;
+
+    public static final int SERVICE_ACTION_1 = 11;
+    public static final int SERVICE_ACTION_2 = 12;
+    public static final int SERVICE_ACTION_3 = 13;
+    public static final int SERVICE_ACTION_4 = 14;
+    public static final int SERVICE_ACTION_5 = 15;
+    public static final int SERVICE_ACTION_6 = 16;
+
 
     public static void main(String[] args) {
     /* Sukurti kavos aparatą:
@@ -41,7 +53,14 @@ public class Main {
     }
 
     private void rodykMeniu() {
-        System.out.println("==================================================");
+        System.out.println("==============Serviso veksmai=====================");
+        System.out.println(SERVICE_ACTION_1 + " - Sukurti N aparatu");
+        System.out.println(SERVICE_ACTION_2 + " - Pasirinkti su kuriuo aparatu dirbti");
+        System.out.println(SERVICE_ACTION_3 + " - Isplauti visus");
+        System.out.println(SERVICE_ACTION_4 + " - Isvalyti aparatu produktus");
+        System.out.println(SERVICE_ACTION_5 + " - Priskirk bendra produkta");
+        System.out.println(SERVICE_ACTION_6 + " - Priskirk skirtingus produktus");
+        System.out.println("==============Aparato veiksmai====================");
         System.out.println(ACTION_1 + " - Padaryk Juoda kava");
         System.out.println(ACTION_2 + " - Padaryk Latte");
         System.out.println(ACTION_3 + " - Padaryk Espresso");
@@ -59,42 +78,67 @@ public class Main {
     public void run() {
         Scanner sc = new Scanner(System.in);
         boolean arTesti = true;
-        KavosAparatas objektas = new KavosAparatas();
+        KavosServisas servisas = new KavosServisas();
+        int kurisAparatas = -1;
+        int aparatuKiekis = -1;
+        ArrayList<KavosAparatas> sarasas = null;
         while (arTesti) {
             rodykMeniu();
             int veiksmas = sc.nextInt();
             switch (veiksmas) {
+                case SERVICE_ACTION_1:
+                    System.out.println("Iveskite aparatu kieki");
+                    aparatuKiekis = sc.nextInt();
+                    sarasas = servisas.sukurkNAparatu(aparatuKiekis);
+                    break;
+                case SERVICE_ACTION_2:
+                    System.out.println("Iveskite aparato eiles numeri, prasideda nuo 0");
+                    kurisAparatas = sc.nextInt();
+                    break;
+                case SERVICE_ACTION_3:
+                    servisas.isplaukVisus(sarasas);
+                    break;
+                case SERVICE_ACTION_4:
+                    servisas.isvalykAparatuProduktus(sarasas);
+                    break;
+                case SERVICE_ACTION_5:
+                    servisas.priskirkBendra(sarasas);
+                    break;
+                case SERVICE_ACTION_6:
+                    servisas.priskirkSkirtinga(sarasas);
+                    break;
+
                 case ACTION_0:
                     arTesti = false;
                     break;
                 case ACTION_1:
-                    objektas.gaminkKava(KavosAparatas.KAVA_JUODA);
+                    sarasas.get(kurisAparatas).gaminkKava(KavosAparatas.KAVA_JUODA);
                     break;
                 case ACTION_2:
-                    objektas.gaminkKava(KavosAparatas.KAVA_LATTE);
+                    sarasas.get(kurisAparatas).gaminkKava(KavosAparatas.KAVA_LATTE);
                     break;
                 case ACTION_3:
-                    objektas.gaminkKava(KavosAparatas.KAVA_ESPRESSO);
+                    sarasas.get(kurisAparatas).gaminkKava(KavosAparatas.KAVA_ESPRESSO);
                     break;
                 case ACTION_4:
-                    objektas.plauti();
+                    sarasas.get(kurisAparatas).plauti();
                     break;
                 case ACTION_5:
-                    objektas.papildykVandeni();
+                    sarasas.get(kurisAparatas).papildykVandeni();
                     break;
                 case ACTION_6:
-                    objektas.papildykCukru();
+                    sarasas.get(kurisAparatas).papildykCukru();
                     break;
                 case ACTION_7:
-                    objektas.papildykKava();
+                    sarasas.get(kurisAparatas).papildykKava();
                     break;
                 case ACTION_8:
                     break;
                 case ACTION_9:
-                    objektas.parodykProduktuBusena();
+                    sarasas.get(kurisAparatas).parodykProduktuBusena();
                     break;
                 case ACTION_10:
-                    objektas.parodykAparatoBusena();
+                    sarasas.get(kurisAparatas).parodykAparatoBusena();
                     break;
             }
         }

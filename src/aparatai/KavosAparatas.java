@@ -1,4 +1,6 @@
-package com.company;
+package aparatai;
+
+import produktai.Produktai;
 
 public class KavosAparatas {
         /* Sukurti kavos aparatą:
@@ -26,9 +28,7 @@ public class KavosAparatas {
     public static final String KAVA_LATTE = "Latte";
     public static final String KAVA_ESPRESSO = "Espresso";
 
-    private float cukrausKiekis = 0;    // gramais
-    private float kavosKiekis = 0;      // gramais
-    private float vandensKiekis = 0;    // mililitrais
+    private Produktai produktai;
 
     private int panaudojimuSkaicius = 0;
     private boolean arPlauti = false;
@@ -52,27 +52,27 @@ public class KavosAparatas {
     }
 
     public float getVandensKiekis() {
-        return vandensKiekis;
+        return this.produktai.getVandensKiekis();
     }
 
     public void setVandensKiekis(float vandensKiekis) {
-        this.vandensKiekis = vandensKiekis;
+        this.produktai.setVandensKiekis(vandensKiekis);
     }
 
     public float getKavosKiekis() {
-        return kavosKiekis;
+        return this.produktai.getKavosKiekis();
     }
 
     public void setKavosKiekis(float kavosKiekis) {
-        this.kavosKiekis = kavosKiekis;
+        this.produktai.setKavosKiekis(kavosKiekis);
     }
 
     public float getCukrausKiekis() {
-        return cukrausKiekis;
+        return this.produktai.getCukrausKiekis();
     }
 
     public void setCukrausKiekis(float cukrausKiekis) {
-        this.cukrausKiekis = cukrausKiekis;
+        this.produktai.setCukrausKiekis(cukrausKiekis);
     }
 
     public void parodykProduktuBusena() {
@@ -220,5 +220,9 @@ public class KavosAparatas {
                     "`|      |  Double Espresso\n" +
                     "  `-__-'");
         }
+    }
+
+    public void setProduktai(Produktai produktai) {
+        this.produktai = produktai;
     }
 }
