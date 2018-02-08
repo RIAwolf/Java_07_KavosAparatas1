@@ -3,7 +3,14 @@ package servisai;
 import aparatai.KavosAparatas;
 import produktai.Produktai;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class KavosServisas {
 
@@ -40,7 +47,7 @@ public class KavosServisas {
             isvalytiProduktai.setVandensKiekis(isvalytiProduktai.getVandensKiekis() + aparatas.getVandensKiekis());
             aparatas.setVandensKiekis(0);
         }
-        System.out.println("Isvalem: "+isvalytiProduktai);
+        System.out.println("Isvalem: " + isvalytiProduktai);
     }
 
     public void isplaukVisus(ArrayList<KavosAparatas> sarasas) {
@@ -64,6 +71,53 @@ public class KavosServisas {
             Produktai skirtingas = new Produktai(0, 0, 0);
             KavosAparatas aparatas = sarasas.get(i);
             aparatas.setProduktai(skirtingas);
+        }
+    }
+
+    public ArrayList<KavosAparatas> nuskaitykKavosAparatus() {
+        ArrayList<KavosAparatas> sarasas = new ArrayList<KavosAparatas>();
+        try {
+            Scanner sc = new Scanner(new File("duomenys.txt"));
+
+            while (sc.hasNextLine()) {
+                Produktai produktas = new Produktai(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+                KavosAparatas aparatas = this.sukurkAparata();
+                aparatas.setProduktai(produktas);
+                sarasas.add(aparatas);
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return sarasas;
+    }
+
+    public void issaugokAparatus(ArrayList<KavosAparatas> sarasas) {
+        try {
+            // atidarom faila
+            System.out.println("Iveskite failo varda");
+            Scanner sc = new Scanner(System.in);
+            String failoVardas= sc.nextLine();
+            FileWriter writer = new FileWriter(failoVardas);
+            // paleisti cikla kad pereiti per visus elementus
+            for (KavosAparatas aparatas : sarasas) {
+                //      pasiimti saraso elementa pagal raide i
+                float cukrus;
+                float kava;
+                float vanduo;
+                cukrus = aparatas.getCukrausKiekis();
+                kava = aparatas.getKavosKiekis();
+                vanduo = aparatas.getVandensKiekis();
+                //      suformuoti ka parasyti
+                String eilute = cukrus + " " + kava + " " + vanduo + "\n";
+                //      ""+aaa+" "+bbb+" "+ccc+"\n"
+                //      irasyti eilute i faila
+                writer.write(eilute);
+            }
+            // uzdaryti faila
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

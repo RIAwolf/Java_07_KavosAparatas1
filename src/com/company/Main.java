@@ -1,6 +1,8 @@
 package com.company;
 
 import aparatai.KavosAparatas;
+import puodeliai.KavosPuodelis;
+import puodeliai.LattePuodelis;
 import servisai.KavosServisas;
 
 import java.util.ArrayList;
@@ -25,6 +27,8 @@ public class Main {
     public static final int SERVICE_ACTION_4 = 14;
     public static final int SERVICE_ACTION_5 = 15;
     public static final int SERVICE_ACTION_6 = 16;
+    public static final int SERVICE_ACTION_7 = 17;
+    public static final int SERVICE_ACTION_8 = 18;
 
 
     public static void main(String[] args) {
@@ -46,7 +50,19 @@ public class Main {
 	*   Pasakytų kokia yra aparato būsena (kiek liko produktų ir iki plovimo)
 	*   Turėtų keletą konstruktorių
 	*   Turėtų set ir get metodus laukams
+	*
+	*   Sukurti kavos servise metoda kuris nuskaitytu informacija is tekstinio failo
+	*   faile informacija pateikta tokiu formatu
+	*   cukrus kava vanduo
+	*   pvz
+	*   10 30 2000
+	*
+	*   sukurti tiek aparatu kiek yra eiluciu faile
+	*   kiekvienam aparatui duoti atskira produktu objekta
+	*   uzpildyti produkto objekta eilutes informacija
 	*/
+
+
         Main obj = new Main();
         obj.run();
 
@@ -60,6 +76,8 @@ public class Main {
         System.out.println(SERVICE_ACTION_4 + " - Isvalyti aparatu produktus");
         System.out.println(SERVICE_ACTION_5 + " - Priskirk bendra produkta");
         System.out.println(SERVICE_ACTION_6 + " - Priskirk skirtingus produktus");
+        System.out.println(SERVICE_ACTION_7 + " - Importuok kavos aparatus");
+        System.out.println(SERVICE_ACTION_8 + " - Issaugok kavos aparatus");
         System.out.println("==============Aparato veiksmai====================");
         System.out.println(ACTION_1 + " - Padaryk Juoda kava");
         System.out.println(ACTION_2 + " - Padaryk Latte");
@@ -107,18 +125,23 @@ public class Main {
                 case SERVICE_ACTION_6:
                     servisas.priskirkSkirtinga(sarasas);
                     break;
-
+                case SERVICE_ACTION_7:
+                    sarasas = servisas.nuskaitykKavosAparatus();
+                    break;
+                case SERVICE_ACTION_8:
+                    servisas.issaugokAparatus(sarasas);
+                    break;
                 case ACTION_0:
                     arTesti = false;
                     break;
                 case ACTION_1:
-                    sarasas.get(kurisAparatas).gaminkKava(KavosAparatas.KAVA_JUODA);
+                    sarasas.get(kurisAparatas).gaminkKava(KavosPuodelis.KAVA_JUODA);
                     break;
                 case ACTION_2:
-                    sarasas.get(kurisAparatas).gaminkKava(KavosAparatas.KAVA_LATTE);
+                    sarasas.get(kurisAparatas).gaminkKava(KavosPuodelis.KAVA_LATTE);
                     break;
                 case ACTION_3:
-                    sarasas.get(kurisAparatas).gaminkKava(KavosAparatas.KAVA_ESPRESSO);
+                    sarasas.get(kurisAparatas).gaminkKava(KavosPuodelis.KAVA_ESPRESSO);
                     break;
                 case ACTION_4:
                     sarasas.get(kurisAparatas).plauti();

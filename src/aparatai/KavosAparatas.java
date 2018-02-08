@@ -1,6 +1,10 @@
 package aparatai;
 
 import produktai.Produktai;
+import puodeliai.EsspressoPuodelis;
+import puodeliai.JuodosKavosPuodelis;
+import puodeliai.KavosPuodelis;
+import puodeliai.LattePuodelis;
 
 public class KavosAparatas {
         /* Sukurti kavos aparatą:
@@ -24,9 +28,7 @@ public class KavosAparatas {
 	*/
 
     private static final int KADA_PLAUTI = 3;
-    public static final String KAVA_JUODA = "Juoda";
-    public static final String KAVA_LATTE = "Latte";
-    public static final String KAVA_ESPRESSO = "Espresso";
+
 
     private Produktai produktai;
 
@@ -105,17 +107,33 @@ public class KavosAparatas {
     }
 
     public void gaminkKava(String kavosRusis) {
-        switch (kavosRusis) {
-            case KAVA_JUODA:
-                this.gaminkJuoda();
-                break;
-            case KAVA_LATTE:
-                this.gaminkLatte();
-                break;
-            case KAVA_ESPRESSO:
-                this.gaminkEspresso();
-                break;
+
+        if (arGaliuGaminti()) {
+
+            arPlauti = getUzKiekPlauti() == 1;
+
+            KavosPuodelis puodelis = null;
+
+            switch (kavosRusis) {
+                case KavosPuodelis.KAVA_JUODA:
+                    puodelis = new JuodosKavosPuodelis();
+                    break;
+                case KavosPuodelis.KAVA_LATTE:
+                    puodelis = new LattePuodelis();
+                    break;
+                case KavosPuodelis.KAVA_ESPRESSO:
+                    puodelis = new EsspressoPuodelis();
+                    break;
+            }
+
+            setVandensKiekis(getVandensKiekis() - puodelis.getProduktai().getVandensKiekis());
+            setCukrausKiekis(getCukrausKiekis() - puodelis.getProduktai().getCukrausKiekis());
+            setKavosKiekis(getKavosKiekis() - puodelis.getProduktai().getKavosKiekis());
+            puodelis.setArPagaminta(true);
+            panaudojimuSkaicius++;
+            System.out.println(puodelis);
         }
+
 
     }
 
@@ -147,80 +165,6 @@ public class KavosAparatas {
         return result;
     }
 
-    private void gaminkJuoda() {
-        if (arGaliuGaminti()) {
-
-            arPlauti = getUzKiekPlauti() == 1;
-            setVandensKiekis(getVandensKiekis() - 150);
-            setCukrausKiekis(getCukrausKiekis() - 10);
-            setKavosKiekis(getKavosKiekis() - 30);
-            panaudojimuSkaicius++;
-            System.out.println("\n" +
-                    "\n" +
-                    "                        (\n" +
-                    "                          )     (\n" +
-                    "                   ___...(-------)-....___\n" +
-                    "               .-\"\"       )    (          \"\"-.\n" +
-                    "         .-'``'|-._             )         _.-|\n" +
-                    "        /  .--.|   `\"\"---...........---\"\"`   |\n" +
-                    "       /  /    |                             |\n" +
-                    "       |  |    |                             |\n" +
-                    "        \\  \\   |                             |\n" +
-                    "         `\\ `\\ |                             |\n" +
-                    "           `\\ `|                             |\n" +
-                    "           _/ /\\                             /\n" +
-                    "          (__/  \\                           /\n" +
-                    "       _..---\"\"` \\                         /`\"\"---.._\n" +
-                    "    .-'           \\                       /          '-.\n" +
-                    "   :               `-.__             __.-'              :\n" +
-                    "   :                  ) \"\"---...---\"\" (                 :\n" +
-                    "    '._               `\"--...___...--\"`              _.'\n" +
-                    "  jgs \\\"\"--..__                              __..--\"\"/\n" +
-                    "       '._     \"\"\"----.....______.....----\"\"\"     _.'\n" +
-                    "          `\"\"--..,,_____            _____,,..--\"\"`\n" +
-                    "                        `\"\"\"----\"\"\"`");
-        }
-    }
-
-    private void gaminkLatte() {
-        if (arGaliuGaminti()) {
-
-            arPlauti = getUzKiekPlauti() == 1;
-            setVandensKiekis(getVandensKiekis() - 200);
-            setCukrausKiekis(getCukrausKiekis() - 10);
-            setKavosKiekis(getKavosKiekis() - 10);
-            panaudojimuSkaicius++;
-            System.out.println("         {\n" +
-                    "      {   }\n" +
-                    "       }_{ __{\n" +
-                    "    .-{   }   }-.\n" +
-                    "   (   }     {   )\n" +
-                    "   |`-.._____..-'|\n" +
-                    "   |             ;--.\n" +
-                    "   |            (__  \\\n" +
-                    "   |             | )  )\n" +
-                    "   |             |/  /\n" +
-                    "   |             /  /    -Felix Lee-\n" +
-                    "   |            (  /\n" +
-                    "   \\             y'\n" +
-                    "    `-.._____..-'");
-        }
-    }
-
-    private void gaminkEspresso() {
-        if (arGaliuGaminti()) {
-            arPlauti = getUzKiekPlauti() == 1;
-            setVandensKiekis(getVandensKiekis() - 50);
-            setCukrausKiekis(getCukrausKiekis() - 0);
-            setKavosKiekis(getKavosKiekis() - 25);
-            panaudojimuSkaicius++;
-            System.out.println("  .-~~-.\n" +
-                    ",|`-__-'|\n" +
-                    "||      |\n" +
-                    "`|      |  Double Espresso\n" +
-                    "  `-__-'");
-        }
-    }
 
     public void setProduktai(Produktai produktai) {
         this.produktai = produktai;
