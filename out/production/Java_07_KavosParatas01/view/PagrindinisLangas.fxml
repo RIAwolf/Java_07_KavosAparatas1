@@ -27,7 +27,7 @@
                            </HBox.margin></Label>
                      </children>
                   </HBox>
-                  <HBox layoutX="15.0" layoutY="15.0" prefHeight="100.0" prefWidth="200.0">
+                  <HBox layoutX="15.0" layoutY="15.0" maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
                      <children>
                         <Label alignment="TOP_LEFT" text="Produkto būsena" HBox.hgrow="ALWAYS">
                            <HBox.margin>
@@ -35,6 +35,20 @@
                            </HBox.margin>
                         </Label>
                         <Label fx:id="produktoBusena" alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold;" text="Nėra" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="15.0" layoutY="52.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" text="Parinktas aparatas:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="parinktasAparatas" alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold;" text="Nėra" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -73,6 +87,23 @@
                         </Label>
                         <Button fx:id="priskirkBendra" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPriskirkBendra" text="Bendrą" HBox.hgrow="ALWAYS" />
                         <Button fx:id="priskirkSkirtingus" disable="true" layoutX="186.0" layoutY="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPriskirkSkirtingus" text="Skirtingus" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                     <children>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="147.0" text="Įveskite aparato numerį:" HBox.hgrow="NEVER">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="aparatoNumeris" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="rinkisAparata" disable="true" mnemonicParsing="false" onAction="#onRinkisAparata" prefHeight="25.0" prefWidth="170.0" text="Pasirinkti aparata" HBox.hgrow="NEVER" />
                      </children>
                      <opaqueInsets>
                         <Insets />
