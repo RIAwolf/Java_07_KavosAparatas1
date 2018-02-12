@@ -1,6 +1,11 @@
 package com.company;
 
 import aparatai.KavosAparatas;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import puodeliai.KavosPuodelis;
 import puodeliai.LattePuodelis;
 import servisai.KavosServisas;
@@ -8,7 +13,7 @@ import servisai.KavosServisas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends Application {
     public static final int ACTION_0 = 0;
     public static final int ACTION_1 = 1;
     public static final int ACTION_2 = 2;
@@ -30,6 +35,13 @@ public class Main {
     public static final int SERVICE_ACTION_7 = 17;
     public static final int SERVICE_ACTION_8 = 18;
 
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("../../view/PagrindinisLangas.fxml"));
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root, 640, 480));
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
     /* Sukurti kavos aparatą:
@@ -62,13 +74,14 @@ public class Main {
 	*   uzpildyti produkto objekta eilutes informacija
 	*/
 
-
-        Main obj = new Main();
-        obj.run();
+    launch(args);
+//        Main obj = new Main();
+//        obj.run();
 
     }
 
     private void rodykMeniu() {
+        // Sugalvoti dizaina su java FX šiems meniu punktams
         System.out.println("==============Serviso veksmai=====================");
         System.out.println(SERVICE_ACTION_1 + " - Sukurti N aparatu");
         System.out.println(SERVICE_ACTION_2 + " - Pasirinkti su kuriuo aparatu dirbti");

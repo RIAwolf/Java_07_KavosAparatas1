@@ -3,6 +3,7 @@ package puodeliai;
 import produktai.Produktai;
 
 public class KavosPuodelis extends Puodelis{
+
     public static final String KAVA_JUODA = "Juoda";
     public static final String KAVA_LATTE = "Latte";
     public static final String KAVA_ESPRESSO = "Espresso";
