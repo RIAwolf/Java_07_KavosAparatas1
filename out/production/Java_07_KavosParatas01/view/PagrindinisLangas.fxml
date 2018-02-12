@@ -71,8 +71,8 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </Label>
-                        <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSukurkNAparatu" text="Bendrą" HBox.hgrow="ALWAYS" />
-                        <Button disable="true" layoutX="186.0" layoutY="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSukurkNAparatu" text="Skirtingus" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="priskirkBendra" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPriskirkBendra" text="Bendrą" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="priskirkSkirtingus" disable="true" layoutX="186.0" layoutY="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPriskirkSkirtingus" text="Skirtingus" HBox.hgrow="ALWAYS" />
                      </children>
                      <opaqueInsets>
                         <Insets />
