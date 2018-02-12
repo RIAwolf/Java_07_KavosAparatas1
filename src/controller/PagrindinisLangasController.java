@@ -15,6 +15,7 @@ public class PagrindinisLangasController {
 
     public TextField aparatuKiekioIvedimoLaukas;
     public Label sukurtuAparatuLabel;
+    public Label produktoBusena;
 
 
     public PagrindinisLangasController() {
@@ -30,8 +31,11 @@ public class PagrindinisLangasController {
             aparatuSarasas = servisas.sukurkNAparatu(n);
             System.out.println("Prikuriau: " + n + " aparatu");
             sukurtuAparatuLabel.setText("" + aparatuSarasas.size());
+            produktoBusena.setText("Nėra");
         } catch (Exception e) {
             System.out.println("Ivesta ne skaicius");
         }
     }
+
+
 }

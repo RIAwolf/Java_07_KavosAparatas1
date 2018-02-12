@@ -83,7 +83,7 @@ public class Main extends Application {
     private void rodykMeniu() {
         // Sugalvoti dizaina su java FX šiems meniu punktams
         System.out.println("==============Serviso veksmai=====================");
-        System.out.println(SERVICE_ACTION_1 + " - Sukurti N aparatu");
+        //System.out.println(SERVICE_ACTION_1 + " - Sukurti N aparatu");
         System.out.println(SERVICE_ACTION_2 + " - Pasirinkti su kuriuo aparatu dirbti");
         System.out.println(SERVICE_ACTION_3 + " - Isplauti visus");
         System.out.println(SERVICE_ACTION_4 + " - Isvalyti aparatu produktus");
