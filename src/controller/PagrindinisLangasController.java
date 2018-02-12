@@ -36,6 +36,10 @@ public class PagrindinisLangasController {
     public Label salinimasV;
     public Label salinimasC;
 
+    public Button pildykCukru;
+    public Button pildykVandeni;
+    public Button pildykKava;
+
     public PagrindinisLangasController() {
         servisas = new KavosServisas();
     }
@@ -64,6 +68,7 @@ public class PagrindinisLangasController {
         servisas.priskirkSkirtinga(aparatuSarasas);
         produktoBusena.setText("Skirtingi");
         _priskirtaProduktu = true;
+        atrakintiPildyma();
         salintiProduktus.setDisable(!arAttrakintiSalinima());
     }
 
@@ -71,6 +76,7 @@ public class PagrindinisLangasController {
         servisas.priskirkBendra(aparatuSarasas);
         produktoBusena.setText("Bendras");
         _priskirtaProduktu = true;
+        atrakintiPildyma();
         salintiProduktus.setDisable(!arAttrakintiSalinima());
     }
 
@@ -79,6 +85,7 @@ public class PagrindinisLangasController {
         try {
             int n = Integer.parseInt(ivestaLaukelyje);
             _aparatas = n;
+            atrakintiPildyma();
             parinktasAparatas.setText("" + _aparatas);
         } catch (Exception e) {
             System.out.println("Ivesta ne skaicius");
@@ -94,8 +101,45 @@ public class PagrindinisLangasController {
 
     public void onSalintiProduktus() {
         Produktai produktai = servisas.isvalykAparatuProduktus(aparatuSarasas);
-        salinimasC.setText(""+produktai.getCukrausKiekis());
-        salinimasV.setText(""+produktai.getVandensKiekis());
-        salinimasK.setText(""+produktai.getKavosKiekis());
+        salinimasC.setText("" + produktai.getCukrausKiekis());
+        salinimasV.setText("" + produktai.getVandensKiekis());
+        salinimasK.setText("" + produktai.getKavosKiekis());
+    }
+
+    private void parodykAparatoInfo() {
+        salinimasC.setText("" + aparatuSarasas.get(_aparatas).getCukrausKiekis());
+        salinimasV.setText("" + aparatuSarasas.get(_aparatas).getVandensKiekis());
+        salinimasK.setText("" + aparatuSarasas.get(_aparatas).getKavosKiekis());
+
+    }
+
+    private void atrakintiPildyma(){
+        if (!_priskirtaProduktu || _aparatas < 0) {
+            return;
+        }
+        pildykCukru.setDisable(false);
+        pildykVandeni.setDisable(false);
+        pildykKava.setDisable(false);
+
+    }
+
+    public void onPildykCukru() {
+
+        aparatuSarasas.get(_aparatas).papildykCukru();
+        parodykAparatoInfo();
+
+
+    }
+
+    public void onPildykVandeni() {
+
+        aparatuSarasas.get(_aparatas).papildykVandeni();
+        parodykAparatoInfo();
+    }
+
+    public void onPildykKava() {
+
+        aparatuSarasas.get(_aparatas).papildykKava();
+        parodykAparatoInfo();
     }
 }

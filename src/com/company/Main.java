@@ -44,66 +44,19 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-    /* Sukurti kavos aparatą:
-    * Kuris turėtų atributus:
-	* Cukraus kiekis
-	* Kavos pupelių kiekis
-	* Vandens kiekis
-	* Panaudojimų skaičius
-	* Panaudojimų skaičiaus riba – konstanta, kuri saugo, kas kiek panaudojimų reikia atlikti plovimą
-	* Kuris mokėtų:
-	*   Papildyti vandens/pupelių/cukraus
-	*   Gaminti bent trijų rūšių kavą (nustatoma pagal String parametrą ir kuri naudotų skirtingus produktų kiekius),
-	*       jeigu trūksta nors vieno produkto 0 atspausdintų atitinkamą pranešimą;
-	*       Taip pat atspausditų pranešimą jeigu laikas plovimui
-	*   Atlikti plovimą (apnulina panaudojimų skaičių)
-	*   Pasakyti ar pasiruošęs (netrūksta produktų ir išsivalęs)
-	*   Pasakytų kokia dabar produktų būsena – atspausdintų informaciją
-	*   Pasakytų kokia yra aparato būsena (kiek liko produktų ir iki plovimo)
-	*   Turėtų keletą konstruktorių
-	*   Turėtų set ir get metodus laukams
-	*
-	*   Sukurti kavos servise metoda kuris nuskaitytu informacija is tekstinio failo
-	*   faile informacija pateikta tokiu formatu
-	*   cukrus kava vanduo
-	*   pvz
-	*   10 30 2000
-	*
-	*   sukurti tiek aparatu kiek yra eiluciu faile
-	*   kiekvienam aparatui duoti atskira produktu objekta
-	*   uzpildyti produkto objekta eilutes informacija
-	*/
+
 
     launch(args);
-//        Main obj = new Main();
-//        obj.run();
 
     }
 
     private void rodykMeniu() {
-        // Sugalvoti dizaina su java FX šiems meniu punktams
-        System.out.println("==============Serviso veksmai=====================");
-        //System.out.println(SERVICE_ACTION_1 + " - Sukurti N aparatu");
-        //System.out.println(SERVICE_ACTION_2 + " - Pasirinkti su kuriuo aparatu dirbti");
-        System.out.println(SERVICE_ACTION_3 + " - Isplauti visus");
-        //System.out.println(SERVICE_ACTION_4 + " - Isvalyti aparatu produktus");
-        //System.out.println(SERVICE_ACTION_5 + " - Priskirk bendra produkta");
-        //System.out.println(SERVICE_ACTION_6 + " - Priskirk skirtingus produktus");
-        System.out.println(SERVICE_ACTION_7 + " - Importuok kavos aparatus");
-        System.out.println(SERVICE_ACTION_8 + " - Issaugok kavos aparatus");
-        System.out.println("==============Aparato veiksmai====================");
-        System.out.println(ACTION_1 + " - Padaryk Juoda kava");
-        System.out.println(ACTION_2 + " - Padaryk Latte");
-        System.out.println(ACTION_3 + " - Padaryk Espresso");
-        System.out.println(ACTION_4 + " - Plauk aparata");
-        System.out.println(ACTION_5 + " - Papildyk vandeni");
-        System.out.println(ACTION_6 + " - Papildyk cukru");
-        System.out.println(ACTION_7 + " - Papildyk kava");
-        System.out.println(ACTION_8 + " - Parodyk ar pasiruoses");
-        System.out.println(ACTION_9 + " - Parodyk produktu busena");
-        System.out.println(ACTION_10 + " - Parodyk aparato busena");
-        System.out.println(ACTION_0 + " - Baigti darba");
-        System.out.println("==================================================");
+        // Papildyti vieno aparato produktus ir
+        // parodyti laukeliuose kiek ju yra
+
+
+
+
     }
 
     public void run() {

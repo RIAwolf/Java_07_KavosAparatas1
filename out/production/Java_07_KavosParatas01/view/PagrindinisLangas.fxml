@@ -162,6 +162,24 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </HBox>
+                  <HBox layoutX="10.0" layoutY="115.0" spacing="10.0">
+                     <children>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Papildyk pasirinkta aparata" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="pildykCukru" disable="true" mnemonicParsing="false" onAction="#onPildykCukru" prefHeight="25.0" prefWidth="170.0" text="Pildyti Cukru" HBox.hgrow="NEVER" />
+                        <Button fx:id="pildykVandeni" disable="true" layoutX="229.0" layoutY="15.0" mnemonicParsing="false" onAction="#onPildykVandeni" prefHeight="25.0" prefWidth="170.0" text="Pildyti Vandeni" />
+                        <Button fx:id="pildykKava" disable="true" layoutX="275.0" layoutY="15.0" mnemonicParsing="false" onAction="#onPildykKava" prefHeight="25.0" prefWidth="170.0" text="Pildyti Kava" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
                </children></VBox>
             </children>
         </HBox>
