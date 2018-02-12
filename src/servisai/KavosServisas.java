@@ -31,7 +31,7 @@ public class KavosServisas {
         return sarasas;
     }
 
-    public void isvalykAparatuProduktus(ArrayList<KavosAparatas> sarasas) {
+    public Produktai isvalykAparatuProduktus(ArrayList<KavosAparatas> sarasas) {
         Produktai isvalytiProduktai = new Produktai(0, 0, 0);
         float isvalytaKava = 0;
         for (int i = 0; i < sarasas.size(); i++) {
@@ -48,6 +48,7 @@ public class KavosServisas {
             aparatas.setVandensKiekis(0);
         }
         System.out.println("Isvalem: " + isvalytiProduktai);
+        return isvalytiProduktai;
     }
 
     public void isplaukVisus(ArrayList<KavosAparatas> sarasas) {
@@ -68,7 +69,7 @@ public class KavosServisas {
     public void priskirkSkirtinga(ArrayList<KavosAparatas> sarasas) {
 
         for (int i = 0; i < sarasas.size(); i++) {
-            Produktai skirtingas = new Produktai(0, 0, 0);
+            Produktai skirtingas = new Produktai(20, 0, 0);
             KavosAparatas aparatas = sarasas.get(i);
             aparatas.setProduktai(skirtingas);
         }
@@ -97,7 +98,7 @@ public class KavosServisas {
             // atidarom faila
             System.out.println("Iveskite failo varda");
             Scanner sc = new Scanner(System.in);
-            String failoVardas= sc.nextLine();
+            String failoVardas = sc.nextLine();
             FileWriter writer = new FileWriter(failoVardas);
             // paleisti cikla kad pereiti per visus elementus
             for (KavosAparatas aparatas : sarasas) {

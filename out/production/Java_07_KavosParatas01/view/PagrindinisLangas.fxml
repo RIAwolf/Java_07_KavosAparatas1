@@ -41,7 +41,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox layoutX="15.0" layoutY="52.0" prefHeight="100.0" prefWidth="200.0">
+                  <HBox layoutX="15.0" layoutY="52.0" VBox.vgrow="NEVER">
                      <children>
                         <Label alignment="TOP_LEFT" text="Parinktas aparatas:" HBox.hgrow="ALWAYS">
                            <HBox.margin>
@@ -49,6 +49,40 @@
                            </HBox.margin>
                         </Label>
                         <Label fx:id="parinktasAparatas" alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold;" text="Nėra" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="15.0" layoutY="89.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" text="K:" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="salinimasK" alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold;" text="0" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="parinktasAparatas11" alignment="TOP_RIGHT" layoutX="124.0" layoutY="15.0" maxWidth="1.7976931348623157E308" text="C:" textAlignment="RIGHT" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="salinimasC" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="15.0" layoutY="15.0" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold;" text="0" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="125.0" layoutY="10.0" maxWidth="1.7976931348623157E308" text="V:" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="salinimasV" alignment="TOP_RIGHT" layoutX="115.0" layoutY="10.0" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold;" text="0" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -104,6 +138,22 @@
                         </Label>
                         <TextField fx:id="aparatoNumeris" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
                         <Button fx:id="rinkisAparata" disable="true" mnemonicParsing="false" onAction="#onRinkisAparata" prefHeight="25.0" prefWidth="170.0" text="Pasirinkti aparata" HBox.hgrow="NEVER" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="80.0" spacing="10.0">
+                     <children>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Šalinti produktus iš aparatų" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="salintiProduktus" disable="true" mnemonicParsing="false" onAction="#onSalintiProduktus" prefHeight="25.0" prefWidth="170.0" text="Šalinti" HBox.hgrow="NEVER" />
                      </children>
                      <opaqueInsets>
                         <Insets />

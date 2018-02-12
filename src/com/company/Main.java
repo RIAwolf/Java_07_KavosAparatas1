@@ -84,11 +84,11 @@ public class Main extends Application {
         // Sugalvoti dizaina su java FX šiems meniu punktams
         System.out.println("==============Serviso veksmai=====================");
         //System.out.println(SERVICE_ACTION_1 + " - Sukurti N aparatu");
-        System.out.println(SERVICE_ACTION_2 + " - Pasirinkti su kuriuo aparatu dirbti");
+        //System.out.println(SERVICE_ACTION_2 + " - Pasirinkti su kuriuo aparatu dirbti");
         System.out.println(SERVICE_ACTION_3 + " - Isplauti visus");
-        System.out.println(SERVICE_ACTION_4 + " - Isvalyti aparatu produktus");
-        System.out.println(SERVICE_ACTION_5 + " - Priskirk bendra produkta");
-        System.out.println(SERVICE_ACTION_6 + " - Priskirk skirtingus produktus");
+        //System.out.println(SERVICE_ACTION_4 + " - Isvalyti aparatu produktus");
+        //System.out.println(SERVICE_ACTION_5 + " - Priskirk bendra produkta");
+        //System.out.println(SERVICE_ACTION_6 + " - Priskirk skirtingus produktus");
         System.out.println(SERVICE_ACTION_7 + " - Importuok kavos aparatus");
         System.out.println(SERVICE_ACTION_8 + " - Issaugok kavos aparatus");
         System.out.println("==============Aparato veiksmai====================");
